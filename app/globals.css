@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg0: #050712;
+  --bg1: #090A1F;
+  --card: rgba(255,255,255,0.08);
+  --cardBorder: rgba(255,255,255,0.14);
+  --text: #EAF0FF;
+  --muted: rgba(234,240,255,0.70);
+  --blue: #4DA3FF;
+  --purple: #B86BFF;
+  --cyan: #35F2D0;
+  --danger: #FF4D6D;
+}
+
+html, body {
+  background-color: var(--bg0);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+* { box-sizing: border-box; }
+
+.bg-space {
+  background:
+    radial-gradient(900px circle at 70% 40%, rgba(77,163,255,0.18), transparent 60%),
+    radial-gradient(850px circle at 30% 65%, rgba(184,107,255,0.16), transparent 58%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-space::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.25) 50%, transparent 51%),
+    radial-gradient(1px 1px at 80% 30%, rgba(255,255,255,0.18) 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.20) 50%, transparent 51%),
+    radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.16) 50%, transparent 51%),
+    radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.14) 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.12) 50%, transparent 51%);
+  opacity: 0.25;
+  pointer-events:none;
+}
+
+.glass {
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
