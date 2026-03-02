@@ -53,3 +53,13 @@ html, body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+body{
+  background:
+    radial-gradient(900px circle at 70% 40%, rgba(77,163,255,0.18), transparent 60%),
+    radial-gradient(850px circle at 30% 65%, rgba(184,107,255,0.16), transparent 58%),
+    linear-gradient(180deg, rgba(5,7,18,0.85), rgba(9,10,31,0.92)),
+    url("/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
