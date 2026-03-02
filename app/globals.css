@@ -28,7 +28,11 @@ html, body {
   background:
     radial-gradient(900px circle at 70% 40%, rgba(77,163,255,0.18), transparent 60%),
     radial-gradient(850px circle at 30% 65%, rgba(184,107,255,0.16), transparent 58%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
+    linear-gradient(180deg, rgba(5,7,18,0.70), rgba(9,10,31,0.85)),
+    url("/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
   overflow: hidden;
 }
