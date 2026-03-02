@@ -59,7 +59,7 @@ html, body {
 }
 body {
   background:
-    linear-gradient(rgba(5,10,30,0.85), rgba(5,10,30,0.9)),
+    linear-gradient(rgba(5,10,30,0.72), rgba(5,10,30,0.85)),
     url("/bg.png");
   background-size: cover;
   background-position: center;
