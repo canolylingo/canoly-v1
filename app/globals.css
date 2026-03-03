@@ -2,31 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===============================
-   CANOLY GALAXY BACKGROUND SYSTEM
-   =============================== */
+/* =========================
+   CANOLY GLOBALS (SAFE)
+   ========================= */
 
 :root{
-  --cardBorder: rgba(255,255,255,0.08);
-  --danger: #ff4d6d;
+  --cardBorder: rgba(255,255,255,0.10);
   --text: #ffffff;
+  --danger: #ff4d6d;
 }
 
-/* Main space background */
+/* Make sure body never forces a weird background */
+html, body{
+  height: 100%;
+}
+
+body{
+  color: var(--text);
+  background: #050a1e;
+}
+
+/* =========================
+   MAIN PAGE SPACE BACKGROUND
+   Uses /public/bg.png
+   ========================= */
+
 .bg-space{
   position: relative;
+  min-height: 100vh;
   overflow: hidden;
 
+  /* galaxy image */
   background-image: url("/bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 
-  /* make galaxy vivid */
-  filter: saturate(1.2) contrast(1.12) brightness(0.78);
+  /* vivid but not washed out */
+  filter: saturate(1.15) contrast(1.10) brightness(0.82);
 }
 
-/* subtle star particles */
+/* subtle stars (very light) */
 .bg-space::before{
   content:"";
   position:absolute;
@@ -34,42 +50,49 @@
   pointer-events:none;
 
   background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.25) 50%, transparent 51%),
-    radial-gradient(1px 1px at 80% 30%, rgba(255,255,255,0.18) 50%, transparent 51%),
-    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.20) 50%, transparent 51%),
-    radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.16) 50%, transparent 51%),
-    radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.14) 50%, transparent 51%),
-    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.12) 50%, transparent 51%);
-    
-  opacity: 0.2;
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.22) 50%, transparent 51%),
+    radial-gradient(1px 1px at 80% 30%, rgba(255,255,255,0.16) 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.18) 50%, transparent 51%),
+    radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.14) 50%, transparent 51%),
+    radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.12) 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.10) 50%, transparent 51%);
+  opacity: 0.18;
 }
 
-/* hero glow overlay */
+/* IMPORTANT: overlay WITHOUT blend mode (so text stays clean) */
 .bg-space::after{
   content:"";
   position:absolute;
   inset:0;
   pointer-events:none;
 
+  /* hero-matching glow + dark readability layer */
   background:
-    radial-gradient(circle at 70% 35%, rgba(124,58,237,0.45), transparent 55%),
-    radial-gradient(circle at 40% 65%, rgba(56,189,248,0.35), transparent 60%),
-    linear-gradient(180deg, rgba(5,10,30,0.82), rgba(5,10,30,0.95));
-
-  mix-blend-mode: screen;
-  opacity: 0.65;
+    radial-gradient(circle at 70% 35%, rgba(124,58,237,0.28), transparent 56%),
+    radial-gradient(circle at 40% 65%, rgba(56,189,248,0.20), transparent 60%),
+    linear-gradient(180deg, rgba(5,10,30,0.78) 0%, rgba(5,10,30,0.92) 100%);
+  opacity: 1;
 }
 
-/* keep content above overlays */
+/* Keep all content above overlays */
 .bg-space > *{
   position: relative;
   z-index: 1;
 }
 
-/* glass card style */
+/* =========================
+   GLASS CARD UTILITY
+   ========================= */
 .glass{
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.05);
   border: 1px solid var(--cardBorder);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Optional stronger shadow glow utility (if used in components) */
+.shadow-glowStrong{
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 30px 80px rgba(0,0,0,0.55);
 }
