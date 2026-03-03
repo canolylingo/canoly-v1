@@ -23,7 +23,7 @@
   background-attachment: fixed;
 
   /* make galaxy vivid */
-  filter: saturate(1.3) contrast(1.15) brightness(0.88);
+  filter: saturate(1.2) contrast(1.12) brightness(0.78);
 }
 
 /* subtle star particles */
@@ -54,10 +54,10 @@
   background:
     radial-gradient(circle at 70% 35%, rgba(124,58,237,0.45), transparent 55%),
     radial-gradient(circle at 40% 65%, rgba(56,189,248,0.35), transparent 60%),
-    linear-gradient(180deg, rgba(5,10,30,0.70), rgba(5,10,30,0.90));
+    linear-gradient(180deg, rgba(5,10,30,0.82), rgba(5,10,30,0.95));
 
   mix-blend-mode: screen;
-  opacity: 0.9;
+  opacity: 0.65;
 }
 
 /* keep content above overlays */
