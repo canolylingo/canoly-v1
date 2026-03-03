@@ -17,13 +17,27 @@ export function HeroImage() {
           priority
           className="object-contain"
         />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,18,0.00),rgba(5,7,18,0.18),rgba(5,7,18,0.35))]" />
-      </div>
-      {!exists ? (
-        <div className="mt-3 rounded-xl border border-[color:var(--danger)]/50 bg-black/30 p-3 text-sm text-[color:var(--text)]">
-          Missing <span className="font-mono">/public/image.png</span> — please upload your reference image.
-        </div>
-      ) : null}
-    </div>
+   <div className="relative h-[560px] w-full overflow-hidden rounded-2xl">
+
+  {/* Laptop */}
+  <Image
+    src="/hero-laptop.png"
+    alt="Laptop preview"
+    width={900}
+    height={600}
+    className="absolute left-0 top-16 w-[78%] drop-shadow-[0_40px_80px_rgba(0,0,0,0.6)]"
+    priority
+  />
+
+  {/* Phone */}
+  <Image
+    src="/hero-phone.png"
+    alt="Phone preview"
+    width={300}
+    height={600}
+    className="absolute right-10 top-0 w-[28%] drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]"
+  />
+
+</div>
   );
 }
