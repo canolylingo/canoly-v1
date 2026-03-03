@@ -44,3 +44,20 @@ export function HeroImage() {
     </div>
   );
 }
+/* ===== Canoly Hero Twinkle Stars ===== */
+@keyframes twinkleA {
+  0%, 100% { opacity: .18; transform: translateY(0); }
+  50% { opacity: .55; transform: translateY(-2px); }
+}
+@keyframes twinkleB {
+  0%, 100% { opacity: .10; transform: translateY(0); }
+  50% { opacity: .45; transform: translateY(2px); }
+}
+@keyframes twinkleC {
+  0%, 100% { opacity: .08; }
+  50% { opacity: .35; }
+}
+
+.twinkle-a { animation: twinkleA 3.6s ease-in-out infinite; }
+.twinkle-b { animation: twinkleB 4.8s ease-in-out infinite; }
+.twinkle-c { animation: twinkleC 6.2s ease-in-out infinite; }
